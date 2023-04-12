@@ -18,6 +18,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE), oakland_64)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+ifneq ($(filter oakland_64,$(TARGET_DEVICE)),)
+lude $(call all-makefiles-under,$(LOCAL_PATH))
 endif
